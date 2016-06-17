@@ -56,16 +56,16 @@ public class LibrosView extends JDialog {
         setResizable(false);
         libroController = new LibroController();
         populateTable();
-        editarButton.setVisible(false);
+        editarButton.setEnabled(false);
 
-        eliminarButton.setVisible(false);
+        eliminarButton.setEnabled(false);
         agregarPeliculaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 launchAddMovieWindow();
-                editarButton.setVisible(false);
-
-                eliminarButton.setVisible(false);
+               // editarButton.setVisible(false);
+                editarButton.setEnabled(false);
+                eliminarButton.setEnabled(false);
                 populateTable();
             }
         });
@@ -73,9 +73,11 @@ public class LibrosView extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 populateTable();
-                editarButton.setVisible(false);
+               // editarButton.setVisible(false);
+                editarButton.setEnabled(false);
 
-                eliminarButton.setVisible(false);
+
+                eliminarButton.setEnabled(false);
             }
         });
 
@@ -91,9 +93,9 @@ public class LibrosView extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 deleteElem();
-                editarButton.setVisible(false);
+                editarButton.setEnabled(false);
 
-                eliminarButton.setVisible(false);
+                eliminarButton.setEnabled(false);
             }
         });
 
@@ -102,9 +104,9 @@ public class LibrosView extends JDialog {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
-                editarButton.setVisible(true);
+                editarButton.setEnabled(true);
 
-                eliminarButton.setVisible(true);
+                eliminarButton.setEnabled(true);
 
             }
         });
@@ -112,9 +114,9 @@ public class LibrosView extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 modificar();
-                editarButton.setVisible(false);
+                editarButton.setEnabled(false);
 
-                eliminarButton.setVisible(false);
+                eliminarButton.setEnabled(false);
                 populateTable();
             }
         });
@@ -126,9 +128,9 @@ public class LibrosView extends JDialog {
 
                 launchAddDirectorWindow();
                 // populatefiltroBox();
-                editarButton.setVisible(false);
+                editarButton.setEnabled(false);
 
-                eliminarButton.setVisible(false);
+                eliminarButton.setEnabled(false);
 //
             }
         });
