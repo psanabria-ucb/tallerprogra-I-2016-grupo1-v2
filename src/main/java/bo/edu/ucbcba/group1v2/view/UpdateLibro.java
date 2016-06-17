@@ -33,7 +33,7 @@ public class UpdateLibro extends JDialog {
     private JButton cancelarButton;
 
 
-    private LibroController movieController = new LibroController();
+    private LibroController libroController = new LibroController();
     EditorialController directorController = new EditorialController();
 
     UpdateLibro(LibrosView parent, final String nombre, String genero, String descrip, String lanz, String isbn, String direc) {
@@ -74,12 +74,12 @@ public class UpdateLibro extends JDialog {
 
     private void update(String a) {
 
-        movieController.delete(a);
+        libroController.delete(a);
         Boolean entro = true;
         Editorial d = (Editorial) directorBox.getSelectedItem();
         try {
 
-            movieController.create(nameField1.getText(),
+            libroController.create(nameField1.getText(),
                     (String) generoBox.getSelectedItem(),       // REGISTRA EL GENERO
                     descArea.getText(),
                     lanField.getText(),

@@ -47,8 +47,8 @@ public class AddLibro extends JDialog {
 
 
     private void populateComboBox() {
-        List<Editorial> directors = editorialController.getAllDirectors();
-        for (Editorial c : directors) {
+        List<Editorial> editorial = editorialController.getAllDirectors();
+        for (Editorial c : editorial) {
             editorBox.addItem(c);
         }
     }
@@ -71,7 +71,7 @@ public class AddLibro extends JDialog {
             entro = false;
         }
         if (entro) {
-            JOptionPane.showMessageDialog(this, "Película agregada exitosamente ", "Realizado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Libro agregada exitosamente ", "Realizado", JOptionPane.INFORMATION_MESSAGE);
             cancel();
 
         }
@@ -105,7 +105,7 @@ public class AddLibro extends JDialog {
         final Spacer spacer2 = new Spacer();
         rootPanel.add(spacer2, new GridConstraints(7, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
-        label2.setText("Titulo");
+        label2.setText("Título");
         rootPanel.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label3 = new JLabel();
         label3.setText("Lanzamiento");
@@ -114,7 +114,7 @@ public class AddLibro extends JDialog {
         label4.setText("ISBN");
         rootPanel.add(label4, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label5 = new JLabel();
-        label5.setText("Descripcion");
+        label5.setText("Descripción");
         rootPanel.add(label5, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         tituloField = new JTextField();
         tituloField.setText("");
@@ -127,7 +127,7 @@ public class AddLibro extends JDialog {
         descripcionArea.setLineWrap(true);
         rootPanel.add(descripcionArea, new GridConstraints(6, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), new Dimension(150, 50), 0, false));
         final JLabel label6 = new JLabel();
-        label6.setText("Genero");
+        label6.setText("Género");
         rootPanel.add(label6, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         generoBox = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();

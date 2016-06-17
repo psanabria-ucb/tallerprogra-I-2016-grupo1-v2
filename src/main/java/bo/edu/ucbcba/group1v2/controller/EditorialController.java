@@ -33,30 +33,66 @@ public class EditorialController {
         //if (address.isEmpty()){
         //     throw new ValidationException("Address can't be blank");
         // }
-        int length;
-        length = Name.length();
-        if (length > 40)
-            throw new ValidationException("El nombre no puede ser tan largo");
-        else {
-            editorial.setName(Name);
-        }
-        editorial.setName(Name);
-
-       length=Direccion.length();
-        if(length>50) {
-            throw new ValidationException("Direccion larga ");
+        if (Name.matches("[a-zA-Z]+"))
+        {
+            if(Name.length()>25){
+                throw new ValidationException ("Nombre NO PUEDE TENER MAS DE 25 CARACTERES");
+            }
+            else {
+                editorial.setName(Name);
+            }
 
         }
-        else {
-            editorial.setDireccion(Direccion);
+        else
+            throw new ValidationException("Pais solo admite letras");
+
+
+
+
+
+        if (Direccion.matches("[a-zA-Z]+"))
+        {
+            if(Direccion.length()>50){
+                throw new ValidationException ("DIRECCION  NO PUEDE TENER MAS DE 50 CARACTERES");
+            }
+            else {
+                editorial.setDireccion(Direccion);
+            }
+
+        }
+        else
+            throw new ValidationException("Direccion solo admite letras");
+
+
+
+        if (Telefono.matches("[0-9]+"))
+        {
+            if(Telefono.length()>15){
+                throw new ValidationException ("TELEFONO DEL CLIENTE NO PUEDE TENER MAS DE 15 CIFRA");
+            }
+            else {
+                editorial.setTelefono(Integer.parseInt(Telefono));
+            }
+
         }
 
-        if(Telefono.matches("[0-9]+")) {
-            editorial.setTelefono(Integer.parseInt(Telefono));
+        else
+            throw new ValidationException("Telefono no es un numero");
+
+
+        if (Pais.matches("[a-zA-Z]+"))
+        {
+            if(Pais.length()>15){
+                throw new ValidationException ("PAIS  NO PUEDE TENER MAS DE 15 CARACTERES");
+            }
+            else {
+                editorial.setPais(Pais);
+            }
+
         }
-        else {
-            throw new ValidationException("Solo numeros ");
-        }
+        else
+            throw new ValidationException("Pais solo admite letras");
+
 
        /* if (Anio.matches("[0-9]+")) {
             if(Anio.length()<=4)

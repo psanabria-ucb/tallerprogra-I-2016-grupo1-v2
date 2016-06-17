@@ -18,6 +18,26 @@ public class LibroController {
     {
         Libro pelicula = new Libro();
 
+        if(d==null ){
+            throw new ValidationException("Primero debe registrar al menos un editor mediante -> Agregar Editorial");
+        }
+        if(nombre.isEmpty()){
+            throw new ValidationException("Ingrese un Titulo");
+        }
+        if(genero.isEmpty()){
+            throw new ValidationException("Ingrese un genero");
+        }
+        if(description.isEmpty()){
+            throw new ValidationException("Ingrese una descripcion");
+        }
+        if(lanzamiento.isEmpty()){
+            throw new ValidationException("Ingrese año de lanzamiento");
+        }
+        if(isbn.isEmpty()){
+            throw new ValidationException("Ingrese isbn");
+        }
+
+
         if (nombre.matches("[a-zA-Z]+")){
             if(nombre.length()>25){
                 throw new ValidationException("EL Titulo no puede tener mas de 24");
@@ -35,8 +55,8 @@ public class LibroController {
 
         if (description.matches("[a-zA-Z]+"))
         {
-            if(description.length()>70){
-                throw new ValidationException ("DESCRIPCION NO PUEDE TENER MAS DE 70 CARACTERES");
+            if(description.length()>50){
+                throw new ValidationException ("DESCRIPCION NO PUEDE TENER MAS DE 50 CARACTERES");
             }
             else {
                 pelicula.setDescription(description);
@@ -54,7 +74,7 @@ public class LibroController {
         if (lanzamiento.matches("[0-9]+")){
             if(lanzamiento.length()<=4)
             {
-                if ((Integer.parseInt(lanzamiento) <= 2016) && (Integer.parseInt(lanzamiento) >= 1952)) {
+                if ((Integer.parseInt(lanzamiento) <= 2016) && (Integer.parseInt(lanzamiento) >= 1900)) {
                     pelicula.setLanzamiento(Integer.parseInt(lanzamiento));
                 } else
                     throw new ValidationException("El año no puede ser menor a 1952 o mayor a 2016");

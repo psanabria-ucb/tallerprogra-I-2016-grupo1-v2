@@ -31,7 +31,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Titulo"/>
+          <text value="Título"/>
         </properties>
       </component>
       <component id="ae766" class="javax.swing.JLabel">
@@ -55,7 +55,7 @@
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Descripcion"/>
+          <text value="Descripción"/>
         </properties>
       </component>
       <component id="67fe6" class="javax.swing.JTextField" binding="tituloField">
@@ -100,7 +100,7 @@
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Genero"/>
+          <text value="Género"/>
         </properties>
       </component>
       <component id="25de4" class="javax.swing.JComboBox" binding="generoBox">

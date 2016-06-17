@@ -23,14 +23,14 @@ public class NewEditor extends JDialog {
     private JButton registrarDirButton;
     private JTextField telefonoField;
     private JButton cancelarButton;
-    private EditorialController directorController;
+    private EditorialController editorialController;
 
     NewEditor(LibrosView parent) {
         super(parent, "Registrar nuevo editorial", true);
         setContentPane(rootPanel);
         pack();
         setResizable(false);
-        directorController = new EditorialController();
+        editorialController = new EditorialController();
         registrarDirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -51,14 +51,14 @@ public class NewEditor extends JDialog {
         entro = true;
         try {
 
-            directorController.saveDirector(nomeditField.getText(), paisField.getText(), direccionField.getText(), telefonoField.getText());
+            editorialController.saveDirector(nomeditField.getText(), paisField.getText(), direccionField.getText(), telefonoField.getText());
 
         } catch (ValidationException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Format error", JOptionPane.ERROR_MESSAGE);
             entro = false;
         }
         if (entro) {
-            JOptionPane.showMessageDialog(this, "Director agregado exitosamente", "Realizado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Editorial agregada exitosamente", "Realizado", JOptionPane.INFORMATION_MESSAGE);
             cancel();
         }
 
@@ -90,15 +90,15 @@ public class NewEditor extends JDialog {
         rootPanel.setLayout(new GridLayoutManager(6, 2, new Insets(30, 30, 30, 30), -1, -1));
         panel1.add(rootPanel, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         final JLabel label1 = new JLabel();
-        label1.setText("Nombre Director");
+        label1.setText("Nombre Editorial");
         rootPanel.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final Spacer spacer1 = new Spacer();
         rootPanel.add(spacer1, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
-        label2.setText("Pais");
+        label2.setText("País");
         rootPanel.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label3 = new JLabel();
-        label3.setText("Direccion");
+        label3.setText("Dirección");
         rootPanel.add(label3, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         nomeditField = new JTextField();
         rootPanel.add(nomeditField, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
@@ -107,7 +107,7 @@ public class NewEditor extends JDialog {
         direccionField = new JTextField();
         rootPanel.add(direccionField, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label4 = new JLabel();
-        label4.setText("Telefono");
+        label4.setText("Teléfono");
         rootPanel.add(label4, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         telefonoField = new JTextField();
         telefonoField.setText("");

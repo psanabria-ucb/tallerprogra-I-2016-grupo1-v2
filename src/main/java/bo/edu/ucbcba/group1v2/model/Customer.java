@@ -31,6 +31,7 @@ import java.util.List;
         @Lob
         @Column(length = 100)
         private String address;
+        @Column(length = 100)
         private int numberPhone;
 
         //lista de vehiculos
