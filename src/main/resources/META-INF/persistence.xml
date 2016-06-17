@@ -5,6 +5,8 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
         <class>bo.edu.ucbcba.group1v2.model.Customer</class>
+        <class>bo.edu.ucbcba.group1v2.model.Editorial</class>
+        <class>bo.edu.ucbcba.group1v2.model.Libro</class>
 
 
 
